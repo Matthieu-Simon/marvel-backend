@@ -13,11 +13,11 @@ const apiKey = process.env.MARVEL_API_KEY;
 app.get('/characters',  async (req, res) => {
     try {
         // console.log(req.query);
-        const name = req.query.name || "";
+        // const name = req.query.name || "";
         const limit = req.query.limit || 100;
         const skip = req.query.skip || 0;
         
-        const response = await axios.get(`https://lereacteur-marvel-api.herokuapp.com/characters?apiKey=${apiKey}&limit=${limit}&name=${name}&skip=${skip}`);
+        const response = await axios.get(`https://lereacteur-marvel-api.herokuapp.com/characters?apiKey=${apiKey}&limit=${limit}&skip=${skip}`);
 
         // console.log(response.data);
         res.json(response.data)
