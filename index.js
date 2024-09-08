@@ -17,11 +17,11 @@ app.get('/', (req, res) => {
 app.get('/characters',  async (req, res) => {
     try {
         // console.log(req.query);
-        // const name = req.query.name || "";
+        const name = req.query.name || "";
         const limit = req.query.limit || 100;
         const skip = req.query.skip || 0;
         
-        const response = await axios.get(`https://lereacteur-marvel-api.herokuapp.com/characters?apiKey=${apiKey}&limit=${limit}&skip=${skip}`);
+        const response = await axios.get(`https://lereacteur-marvel-api.herokuapp.com/characters?apiKey=${apiKey}&limit=${limit}&skip=${skip}&name=${name}`);
 
         // console.log(response.data);
         res.json(response.data)
